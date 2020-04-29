@@ -1,8 +1,8 @@
 {
-  "name": "my-app",
+  "name": "jmusic",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ioneone.github.io/Jmusic",
+  "homepage": "https://ioneone.github.io/jmusic",
   "dependencies": {
     "@material-ui/core": "^4.9.12",
     "@material-ui/icons": "^4.9.1",
