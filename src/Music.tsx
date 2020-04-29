@@ -85,7 +85,7 @@ const Music = () => {
   return (
     <Container maxWidth="lg">
       <div style={{ display: "flex", alignItems: "center" }}>
-        <img className={classes.logo} alt="Jmusic" src="https://github.com/ioneone/Jmusic/blob/master/logo.png?raw=true" />
+        <img className={classes.logo} alt="Jmusic" src="https://github.com/ioneone/Jmusic/blob/develop/logo.png?raw=true" />
         <Typography display="inline" variant="h6">
           JMusic
         </Typography>
