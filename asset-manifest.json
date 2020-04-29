@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/Jmusic/static/js/main.d512416c.chunk.js",
-    "main.js.map": "/Jmusic/static/js/main.d512416c.chunk.js.map",
-    "runtime-main.js": "/Jmusic/static/js/runtime-main.87451c93.js",
-    "runtime-main.js.map": "/Jmusic/static/js/runtime-main.87451c93.js.map",
-    "static/js/2.2d3adcdb.chunk.js": "/Jmusic/static/js/2.2d3adcdb.chunk.js",
-    "static/js/2.2d3adcdb.chunk.js.map": "/Jmusic/static/js/2.2d3adcdb.chunk.js.map",
-    "index.html": "/Jmusic/index.html",
-    "precache-manifest.252dfeefe556de6a04b113d9db969a6d.js": "/Jmusic/precache-manifest.252dfeefe556de6a04b113d9db969a6d.js",
-    "service-worker.js": "/Jmusic/service-worker.js",
-    "static/js/2.2d3adcdb.chunk.js.LICENSE.txt": "/Jmusic/static/js/2.2d3adcdb.chunk.js.LICENSE.txt"
+    "main.js": "/jmusic/static/js/main.a8e02bba.chunk.js",
+    "main.js.map": "/jmusic/static/js/main.a8e02bba.chunk.js.map",
+    "runtime-main.js": "/jmusic/static/js/runtime-main.959c7252.js",
+    "runtime-main.js.map": "/jmusic/static/js/runtime-main.959c7252.js.map",
+    "static/js/2.f7551461.chunk.js": "/jmusic/static/js/2.f7551461.chunk.js",
+    "static/js/2.f7551461.chunk.js.map": "/jmusic/static/js/2.f7551461.chunk.js.map",
+    "index.html": "/jmusic/index.html",
+    "precache-manifest.1bc1fbbbf7359a73f1b9028a4d72b6c2.js": "/jmusic/precache-manifest.1bc1fbbbf7359a73f1b9028a4d72b6c2.js",
+    "service-worker.js": "/jmusic/service-worker.js",
+    "static/js/2.f7551461.chunk.js.LICENSE.txt": "/jmusic/static/js/2.f7551461.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.87451c93.js",
-    "static/js/2.2d3adcdb.chunk.js",
-    "static/js/main.d512416c.chunk.js"
+    "static/js/runtime-main.959c7252.js",
+    "static/js/2.f7551461.chunk.js",
+    "static/js/main.a8e02bba.chunk.js"
   ]
 }
