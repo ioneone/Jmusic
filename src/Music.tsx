@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, } from "react";
-import { Typography, Container, Grid, makeStyles, Theme, Button, IconButton, Link } from "@material-ui/core";
+import { Typography, Container, Grid, makeStyles, Theme, Button, IconButton, Link, TextField } from "@material-ui/core";
 import APIManager from "./APIManager";
 import YoutubeVideo from "./YouTubeVideo";
 import BinarySearch from "./BinarySearch";
@@ -46,6 +46,8 @@ const Music = () => {
   const [currentVideoTime, setCurrentVideoTime] = useState(0);
 
   const [times, setTimes] = useState(null);
+
+  const [lyrics, setLyrics] = useState("");
 
   const ref = useRef(null);
 
@@ -158,17 +160,39 @@ const Music = () => {
           }
         </Grid>
       </Grid>
-      <Typography>
-        Current Video Time: {currentVideoTime}
-      </Typography>
-      <br/>
-      <Button
-        onClick={() => {
-          copyToClipboard(JSON.stringify(times));
-        }}
-      >
-        Copy lyrics times to Clipboard
-      </Button>
+      <div>
+        <Typography>
+          Current Video Time: {currentVideoTime}
+        </Typography>
+        <br/>
+        <Button
+          onClick={() => {
+            copyToClipboard(JSON.stringify(times));
+          }}
+        >
+          Copy lyrics times to Clipboard
+        </Button>
+      </div>
+      <div>
+        <TextField
+          label="lyrics"
+          multiline
+          rows={4}
+          variant="outlined"
+          value={lyrics}
+          onChange={(event) => {
+            setLyrics(event.target.value);
+          }}
+        />
+        <br />
+        <Button
+          onClick={() => {
+            copyToClipboard(JSON.stringify(lyrics.split("\n").filter(line => line.length > 0)));
+          }}
+        >
+          Transform lyrics to array of string and copy to clipboard
+        </Button>
+      </div>
     </Container>
   );
 }
