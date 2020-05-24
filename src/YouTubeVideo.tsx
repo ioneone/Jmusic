@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from 'react';
+import { MusicJSON } from './APIManager';
 
 type YoutubeVideoProps = {
+  music: MusicJSON[],
   width: string,
   height: string,
   onReady: (event: any) => void,
   onStateChange: (event: any) => void,
-  onCurrentTimeChange: (player: any) => void
+  onCurrentTimeChange: (player: any) => void,
+  loopCurrentSong: boolean
 }
 
 const YoutubeVideo = (props: YoutubeVideoProps) => {
 
-  const { width, height, onReady, onStateChange, onCurrentTimeChange } = props;
+  const { music, width, height, onReady, onStateChange, onCurrentTimeChange, loopCurrentSong } = props;
 
   const [player, setPlayer] = useState(null);
 
@@ -54,6 +57,19 @@ const YoutubeVideo = (props: YoutubeVideoProps) => {
     }
     // eslint-disable-next-line
   }, []);
+
+  useEffect(() => {
+    if (player && player.loadPlaylist) {
+      if (loopCurrentSong) {
+        player.loadPlaylist([music[player.getPlaylistIndex()].id]);
+        player.setLoop(true);
+      }
+      else {
+        player.loadPlaylist(music.map(m => m.id));
+        player.setLoop(true);
+      }
+    }
+  }, [loopCurrentSong, player, music]);
 
   return (
     <div id="player" />

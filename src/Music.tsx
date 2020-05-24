@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, } from "react";
-import { Typography, Container, Grid, makeStyles, Theme, Button, IconButton, Link, TextField } from "@material-ui/core";
+import { Typography, Container, Grid, makeStyles, Theme, Button, IconButton, Link, TextField, Switch } from "@material-ui/core";
 import APIManager from "./APIManager";
 import YoutubeVideo from "./YouTubeVideo";
 import BinarySearch from "./BinarySearch";
@@ -48,6 +48,8 @@ const Music = () => {
   const [times, setTimes] = useState(null);
 
   const [lyrics, setLyrics] = useState("");
+
+  const [loopChecked, setLoopChecked] = useState(false);
 
   const ref = useRef(null);
 
@@ -104,10 +106,11 @@ const Music = () => {
       <Grid container spacing={2}>
         <Grid item xs={7}>
           {
-            music &&
+            music && 
             <YoutubeVideo
               width="100%"
               height="420px"
+              music={music}
               onReady={(event) => {
                 const player = event.target;
                 player.loadPlaylist(music.map(m => m.id));
@@ -120,6 +123,7 @@ const Music = () => {
               onCurrentTimeChange={(player) => {
                 setCurrentVideoTime(player.getCurrentTime());
               }}
+              loopCurrentSong={loopChecked}
             />
           }
         </Grid>
@@ -160,6 +164,15 @@ const Music = () => {
           }
         </Grid>
       </Grid>
+      <div>
+        Loop Current Song
+        <Switch
+          checked={loopChecked}
+          onChange={(event) => {
+            setLoopChecked(event.target.checked);
+          }}
+        />
+      </div>
       <div>
         <Typography>
           Current Video Time: {currentVideoTime}
